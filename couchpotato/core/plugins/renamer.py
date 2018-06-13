@@ -164,7 +164,7 @@ class Renamer(Plugin):
             if len(release_download.get('files', [])) == 1:
                 new_media_folder = sp(from_folder)
             else:
-                new_media_folder = sp(os.path.join(from_folder, os.path.basename(media_folder)))
+                new_media_folder = sp(os.path.join(from_folder, os.path.basename(os.path.dirname(media_folder))))
 
             if not os.path.isdir(new_media_folder):
                 log.error('The provided media folder %s does not exist and could also not be found in the \'from\' folder.', media_folder)
